@@ -8,7 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./windows-manager.nix
+      # ./window-manager.nix
+      ./desktop-manager.nix
       ./sound.nix
       ./users.nix
     ];
