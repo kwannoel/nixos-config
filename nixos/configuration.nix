@@ -8,8 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      # ./window-manager.nix
-      ./desktop-manager.nix
+      ./window-manager.nix
+      # ./desktop-manager.nix
       ./sound.nix
       ./users.nix
     ];
@@ -22,6 +22,7 @@
   # boot.loader.efi.efiSysMountPoint = "/boot/efi";
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
+  boot.supportedFilesystems = [ "ntfs" ];
 
   # Allow firefox and other unfree pkgs
   nixpkgs.config.allowUnfree = true;
@@ -49,7 +50,12 @@
   environment.systemPackages = with pkgs; [
     git
     firefox
-    wget vim
+    wget
+    vim
+    dmenu
+    emacs
+    tdesktop
+    nodejs
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
