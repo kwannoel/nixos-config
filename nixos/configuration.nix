@@ -12,6 +12,7 @@
       # ./desktop-manager.nix
       ./sound.nix
       ./users.nix
+      ./anapi.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -43,7 +44,7 @@
   # };
 
   # Set your time zone.
-  # time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "Asia/Singapore";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -56,6 +57,13 @@
     emacs
     tdesktop
     nodejs
+    xclip
+    tree
+    # TODO configure xmobar
+    scrot # screenshot
+
+    # anapi env
+    postgresql
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
