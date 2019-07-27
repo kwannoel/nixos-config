@@ -12,7 +12,9 @@
       # ./desktop-manager.nix
       ./sound.nix
       ./users.nix
-      ./anapi.nix
+      ./psql.nix
+      ./fonts.nix
+      ./emacs.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -48,22 +50,29 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  
+  environment.interactiveShellInit = ''
+    alias e='emacsclient -c -a ""'
+  '';
+
   environment.systemPackages = with pkgs; [
     git
     firefox
     wget
     vim
     dmenu
-    emacs
-    tdesktop
-    nodejs
+    tdesktop # telegram
     xclip
     tree
     # TODO configure xmobar
     scrot # screenshot
-
-    # anapi env
-    postgresql
+    gimp # Image manipulation lib
+    haskellPackages.xmobar # Top level install allows bin access, have to reconfig if want access within xmonad
+    nodejs-11_x
+    qpdf
+    postgresql_10
+    libreoffice
+    ghostscript
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -75,6 +84,9 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  # Power client dbus
+  # services.upower.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

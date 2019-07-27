@@ -7,5 +7,6 @@
 {
   services.postgresql = {
     enable = true;
+    initialScript = /home/noel/Helpers/setupDB.sql;
    };
 }

@@ -1,5 +1,3 @@
-# nixos configurations
+# Set up
 
----
-
-put these in `/etc/nixos`
+Run init.sh to setup the nix system
