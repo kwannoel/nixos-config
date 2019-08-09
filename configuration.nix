@@ -73,6 +73,8 @@
     postgresql_10
     libreoffice
     ghostscript
+    unetbootin
+    gparted
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
