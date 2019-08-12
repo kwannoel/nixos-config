@@ -55,10 +55,10 @@
     tdesktop # telegram
     xclip
     tree
-    # TODO configure xmobar
     scrot # screenshot
     gimp # Image manipulation lib
     haskellPackages.xmobar # Top level install allows bin access, have to reconfig if want access within xmonad
+    haskellPackages.stack
     nodejs-11_x
     qpdf
     postgresql_10
