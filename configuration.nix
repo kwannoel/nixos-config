@@ -66,6 +66,12 @@
     ghostscript
     unetbootin
     gparted
+    bc # GNU calculator
+    unzip
+    mitscheme
+    spotify
+    racket
+    arandr
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -79,7 +85,7 @@
   services.openssh.enable = true;
 
   # Power client dbus
-  # services.upower.enable = true;
+  services.upower.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

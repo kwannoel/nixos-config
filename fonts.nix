@@ -10,8 +10,9 @@
       source-sans-pro
       source-serif-pro
       etBook
+      oxygenfonts
+      vistafonts
       ia-writer-duospace
-      corefonts
     ];
 
     fontconfig = {
