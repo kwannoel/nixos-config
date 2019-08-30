@@ -74,7 +74,8 @@
     mitscheme
     spotify
     racket
-    arandr
+    arandr # screen configuration
+    blueman
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
