@@ -73,9 +73,12 @@
     unzip
     mitscheme
     spotify
-    racket
+    racket # lisp family
     arandr # screen configuration
-    blueman
+    blueman # bluetooth
+    killall # process handling
+    light # brightness handling
+    haskellPackages.hakyll # hakyll static site generator
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
