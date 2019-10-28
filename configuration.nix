@@ -79,6 +79,9 @@
     killall # process handling
     light # brightness handling
     haskellPackages.hakyll # hakyll static site generator
+    rustc # rust
+    cargo # rust pkg manager
+    rustfmt # rust linting for emacs
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
