@@ -82,6 +82,8 @@
     rustc # rust
     cargo # rust pkg manager
     rustfmt # rust linting for emacs
+    yarn
+    hugo
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
