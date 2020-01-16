@@ -113,6 +113,9 @@
   # enable docker daemon
   virtualisation.docker.enable = true;
 
+  # enable changing screen brightness
+  programs.light.enable = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];

@@ -12,6 +12,6 @@
     uid = 1000;
     home = "/home/noel";
     description = "Noel Kwan";
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "video" ]; # Enable ‘sudo’ for the user.
   };
 }
