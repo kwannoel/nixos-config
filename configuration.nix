@@ -50,40 +50,51 @@
   '';
 
   environment.systemPackages = with pkgs; [
-    git
-    firefox
-    wget
-    vim
-    dmenu
-    tdesktop # telegram
-    xclip
-    tree
-    scrot # screenshot
-    gimp # Image manipulation lib
-    haskellPackages.xmobar # Top level install allows bin access, have to reconfig if want access within xmonad
-    haskellPackages.stack
-    nodejs-11_x
-    qpdf
-    postgresql_10
-    libreoffice
-    ghostscript
-    unetbootin
-    gparted
-    bc # GNU calculator
-    unzip
-    mitscheme
-    spotify
-    racket # lisp family
+    # glava # audio visualization tool
+    ag
     arandr # screen configuration
+    bc # GNU calculator
     blueman # bluetooth
-    killall # process handling
-    light # brightness handling
+    chromium
+    crawlTiles # DCSS
+    dmenu
+    docker
+    docker-compose
+    dwarf-fortress
+    firefox
+    gcc
+    ghostscript
+    gimp # Image manipulation lib
+    git
+    gparted
     haskellPackages.hakyll # hakyll static site generator
-    rustc # rust
-    cargo # rust pkg manager
-    rustfmt # rust linting for emacs
-    yarn
+    haskellPackages.stack
+    haskellPackages.xmobar # Top level install allows bin access, have to reconfig if want access within xmonad
     hugo
+    jdk11
+    jetbrains.idea-community # export _JAVA_AWT_WM_NONREPARENTING=1 # use this to workaround for wm
+    killall # process handling
+    libreoffice
+    light # brightness handling
+    mitscheme
+    nodejs-11_x
+    postgresql_10
+    qpdf
+    qpdfview
+    racket # lisp family
+    rls # provides rust lang server for IDEs
+    rustfmt # rust linting for emacs
+    rustup # rust tool manager
+    scrot # screenshot
+    spotify
+    tdesktop # telegram
+    tree
+    unetbootin
+    unzip
+    vim
+    wget
+    xclip
+    yarn
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -98,6 +109,9 @@
 
   # Power client dbus
   services.upower.enable = true;
+
+  # enable docker daemon
+  virtualisation.docker.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
