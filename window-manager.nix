@@ -27,4 +27,9 @@
     desktopManager.xterm.enable = false;
     desktopManager.default = "none";
   };
+
+  # suspend and lock on lid close
+  services.logind.lidSwitch = "suspend";
+  services.physlock.enable = true;
+  services.physlock.lockOn.suspend = true;
 }
