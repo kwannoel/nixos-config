@@ -78,6 +78,7 @@
     light # brightness handling
     mitscheme
     nodejs-11_x
+    nomacs # Image Viewer
     postgresql_10
     qpdf
     qpdfview
