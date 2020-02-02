@@ -29,7 +29,9 @@
   };
 
   # suspend and lock on lid close
-  services.logind.lidSwitch = "suspend";
+  powerManagement.enable = true;
+  powerManagement.powertop.enable = true;
+  # services.upower.enable = true;
   services.physlock.enable = true;
   services.physlock.lockOn.suspend = true;
 }

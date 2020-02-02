@@ -69,14 +69,17 @@
     gparted
     haskellPackages.hakyll # hakyll static site generator
     haskellPackages.stack
+    haskellPackages.servius # file server
     haskellPackages.xmobar # Top level install allows bin access, have to reconfig if want access within xmonad
     hugo
+    imagemagick7
     jdk11
     jetbrains.idea-community # export _JAVA_AWT_WM_NONREPARENTING=1 # use this to workaround for wm
     killall # process handling
     libreoffice
     light # brightness handling
     mitscheme
+    ngrok
     nodejs-11_x
     nomacs # Image Viewer
     postgresql_10
