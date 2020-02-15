@@ -55,12 +55,15 @@
     arandr # screen configuration
     bc # GNU calculator
     blueman # bluetooth
+    checkstyle # java code formatter
     chromium
+    conda # python
     crawlTiles # DCSS
     dmenu
     docker
     docker-compose
     dwarf-fortress
+    evtest # for testing keyboard inputs
     firefox
     gcc
     ghostscript
@@ -78,9 +81,11 @@
     killall # process handling
     libreoffice
     light # brightness handling
+    libsForQt5.vlc # vlc media player
     mitscheme
     ngrok
-    nodejs-11_x
+    nmap # Check for open ports
+    nodejs-12_x
     nomacs # Image Viewer
     postgresql_10
     qpdf
@@ -97,7 +102,10 @@
     unzip
     vim
     wget
+    xorg.xev
     xclip
+    xorg.xkbcomp # editing keyboard configurations
+    xorg.xmodmap
     yarn
   ];
 

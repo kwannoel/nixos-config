@@ -4,11 +4,29 @@
 
 { config, pkgs, ... }:
 
+let
+  xkbLayout = pkgs.writeText "xkb-layout" ''
+    xkb_symbols "noel_kinesis" {
+      include "pc+us+inet(evdev)+altwin(swap_lalt_lwin)+capslock(swapescape)+eurosign(e)"
+
+      key <TAB>  { [ Control_L ] };
+      key <LCTL> { [ Tab, ISO_Left_Tab ] };
+      modifier_map Control { <TAB> };
+    };
+  '';
+in
 {
   services.xserver = {
     enable = true;
-    layout = "us";
-    xkbOptions = "eurosign:e, caps:swapescape";
+    extraLayouts = {
+      noel_kinesis = {
+        description = "My custom layout.";
+        languages = ["us"];
+        symbolsFile = xkbLayout;
+      };
+    };
+    layout = "noel_kinesis";
+    xkbOptions = "eurosign:e, caps:swapescape, altwin:swap_lalt_lwin";
     # Enable touchpad support.
     libinput.enable = true;
 
