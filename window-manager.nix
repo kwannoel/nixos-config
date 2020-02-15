@@ -9,9 +9,10 @@ let
     xkb_symbols "noel_kinesis" {
       include "pc+us+inet(evdev)+altwin(swap_lalt_lwin)+capslock(swapescape)+eurosign(e)"
 
-      key <TAB>  { [ Control_L ] };
-      key <LCTL> { [ Tab, ISO_Left_Tab ] };
-      modifier_map Control { <TAB> };
+      key <LCTL> { [ Shift_L ] };
+      key <LFSH> { [ Control_L ] };
+      modifier_map Control { <LFSH> };
+      modifier_map Shift { <LCTL> };
     };
   '';
 in
