@@ -53,10 +53,13 @@
     # glava # audio visualization tool
     ag
     arandr # screen configuration
+    awscli # aws cli
     bc # GNU calculator
     blueman # bluetooth
+    cabal-install
     checkstyle # java code formatter
     chromium
+    cargo-watch # watch cargo project src
     conda # python
     crawlTiles # DCSS
     dmenu
@@ -69,7 +72,10 @@
     ghostscript
     gimp # Image manipulation lib
     git
+    graphviz # creating diagrams
     gparted
+    gnumake # make
+    ghcid # low feature haskell ide based off ghci
     haskellPackages.hakyll # hakyll static site generator
     haskellPackages.stack
     haskellPackages.servius # file server
@@ -96,6 +102,7 @@
     rustup # rust tool manager
     scrot # screenshot
     spotify
+    sshguard # protects against ssh sniffing
     tdesktop # telegram
     tree
     unetbootin
