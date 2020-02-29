@@ -103,6 +103,7 @@
     scrot # screenshot
     spotify
     sshguard # protects against ssh sniffing
+    starship # customizable prompt for any shell
     tdesktop # telegram
     tree
     unetbootin
