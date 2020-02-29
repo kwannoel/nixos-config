@@ -7,6 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      ./user-shell.nix
       ./hardware-configuration.nix
       ./window-manager.nix
       # ./desktop-manager.nix
@@ -68,6 +69,7 @@
     dwarf-fortress
     evtest # for testing keyboard inputs
     firefox
+    fzf
     gcc
     ghostscript
     gimp # Image manipulation lib
@@ -103,7 +105,6 @@
     scrot # screenshot
     spotify
     sshguard # protects against ssh sniffing
-    starship # customizable prompt for any shell
     tdesktop # telegram
     tree
     unetbootin
