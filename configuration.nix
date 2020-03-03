@@ -17,6 +17,7 @@
       ./fonts.nix
       ./emacs.nix
       ./boot.nix
+      ./custom.nix
     ];
 
   # Allow firefox and other unfree pkgs
