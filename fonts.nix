@@ -19,7 +19,7 @@
     fontconfig = {
       enable = true;
       defaultFonts = {
-       monospace = [ "Source Code Pro" ];
+       monospace = [ "Iosevka" ];
        sansSerif = [ "Source Sans Pro" ];
        serif = [ "Source Serif Pro" ];
       };
