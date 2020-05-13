@@ -7,12 +7,7 @@
 let
   xkbLayout = pkgs.writeText "xkb-layout" ''
     xkb_symbols "noel_kinesis" {
-      include "pc+us+inet(evdev)+altwin(swap_lalt_lwin)+capslock(swapescape)+eurosign(e)"
-
-      key <LCTL> { [ Shift_L ] };
-      key <LFSH> { [ Control_L ] };
-      modifier_map Control { <LFSH> };
-      modifier_map Shift { <LCTL> };
+      include "pc+us+inet(evdev)+capslock(swapescape)+eurosign(e)"
     };
   '';
 in
@@ -27,7 +22,7 @@ in
       };
     };
     layout = "noel_kinesis";
-    xkbOptions = "eurosign:e, caps:swapescape, altwin:swap_lalt_lwin";
+    xkbOptions = "eurosign:e, caps:swapescape";
     # Enable touchpad support.
     libinput.enable = true;
 

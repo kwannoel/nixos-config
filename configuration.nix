@@ -49,6 +49,9 @@
   
   environment.interactiveShellInit = ''
     alias e='emacsclient -c -a ""'
+    alias rebuild='source ~/nixos-config/init.sh'
+    alias gcm='git commit --amend'
+    alias gs='git status'
   '';
 
   environment.systemPackages = with pkgs; [
@@ -78,7 +81,6 @@
     graphviz # creating diagrams
     gparted
     gnumake # make
-    ghcid # low feature haskell ide based off ghci
     haskellPackages.hakyll # hakyll static site generator
     haskellPackages.stack
     haskellPackages.servius # file server
@@ -95,6 +97,8 @@
     ngrok
     nmap # Check for open ports
     nodejs-12_x
+    okular # edit pdfs
+    inotify-tools # file watch hooks
     nomacs # Image Viewer
     postgresql_10
     qpdf
@@ -117,6 +121,7 @@
     xorg.xkbcomp # editing keyboard configurations
     xorg.xmodmap
     yarn
+    zoom
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
