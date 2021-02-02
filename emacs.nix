@@ -6,7 +6,7 @@
     cmake
     # emacs
     ((emacsPackagesNgGen emacs).emacsWithPackages (epkgs: [
-      epkgs.emacs-libvterm
+      epkgs.vterm
     ]))
     clang
     ripgrep

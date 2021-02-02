@@ -6,18 +6,19 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./user-shell.nix
+    [ ./user-shell.nix
       ./hardware-configuration.nix
       ./window-manager.nix
       # ./desktop-manager.nix
       ./sound.nix
       ./users.nix
       ./psql.nix
+      ./sync.nix # sync across machines
       ./fonts.nix
       ./emacs.nix
       ./boot.nix
       ./custom.nix
+      ./cachix.nix
     ];
 
   # Allow firefox and other unfree pkgs
@@ -29,6 +30,9 @@
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
+
+  # enable OpenGL support
+  hardware.opengl.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -44,6 +48,8 @@
   # Set your time zone.
   time.timeZone = "Asia/Singapore";
 
+  documentation.dev.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   
@@ -55,21 +61,26 @@
   '';
 
   environment.systemPackages = with pkgs; [
-    # glava # audio visualization tool
+    acpi # Advanced configuration and power interface
     ag
     arandr # screen configuration
     awscli # aws cli
     bc # GNU calculator
+    bitwarden # credentials vault
     blueman # bluetooth
     cabal-install
     checkstyle # java code formatter
+    chez # chez scheme
     chromium
     cargo-watch # watch cargo project src
     conda # python
     crawlTiles # DCSS
+    direnv
     dmenu
     docker
     docker-compose
+    dropbox
+    dunst # notification popup
     dwarf-fortress
     evtest # for testing keyboard inputs
     firefox
@@ -78,6 +89,7 @@
     ghostscript
     gimp # Image manipulation lib
     git
+    gitAndTools.gh
     graphviz # creating diagrams
     gparted
     gnumake # make
@@ -87,20 +99,24 @@
     haskellPackages.xmobar # Top level install allows bin access, have to reconfig if want access within xmonad
     hugo
     imagemagick7
+    inotify-tools # file watch hooks
     jdk11
     jetbrains.idea-community # export _JAVA_AWT_WM_NONREPARENTING=1 # use this to workaround for wm
     killall # process handling
+    libnotify # send notifications
     libreoffice
     light # brightness handling
-    libsForQt5.vlc # vlc media player
+    ## libsForQt5.vlc # vlc media player
+    manpages
     mitscheme
     ngrok
     nmap # Check for open ports
     nodejs-12_x
     okular # edit pdfs
-    inotify-tools # file watch hooks
     nomacs # Image Viewer
     postgresql_10
+    python
+    python3
     qpdf
     qpdfview
     racket # lisp family
@@ -110,7 +126,9 @@
     scrot # screenshot
     spotify
     sshguard # protects against ssh sniffing
+    syncthing # synchronize devices
     tdesktop # telegram
+    texlive.combined.scheme-full # latex
     tree
     unetbootin
     unzip
@@ -121,7 +139,8 @@
     xorg.xkbcomp # editing keyboard configurations
     xorg.xmodmap
     yarn
-    zoom
+    zoom-us # video conferencing tool
+    zip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -144,8 +163,9 @@
   programs.light.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  # enable the following ports for syncthing
+  networking.firewall.allowedTCPPorts = [ 22000 ];
+  networking.firewall.allowedUDPPorts = [ 21027 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
@@ -156,6 +176,6 @@
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
-  system.stateVersion = "19.03"; # Did you read the comment?
+  system.stateVersion = "20.09"; # Did you read the comment?
 
 }

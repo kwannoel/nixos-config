@@ -14,4 +14,9 @@
     plugins = [ "man" ];
     theme = "bureau";
   };
+  # To use direnv, run `direnv allow .` within the project root
+  # Include a .envrc file with all your direnv local configurations there
+  programs.zsh.interactiveShellInit = ''
+    eval "$(direnv hook zsh)"
+  '';
 }

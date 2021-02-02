@@ -36,10 +36,9 @@ in
         haskellPackages.xmonad
       ];
     };
-    windowManager.default = "xmonad";
+    displayManager.defaultSession = "none+xmonad";
 
     desktopManager.xterm.enable = false;
-    desktopManager.default = "none";
   };
 
   # suspend and lock on lid close
