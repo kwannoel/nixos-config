@@ -31,6 +31,9 @@
   # Enable bluetooth
   hardware.bluetooth.enable = true;
 
+  # open gl support
+  hardware.opengl.driSupport32Bit = true;
+
   # enable OpenGL support
   hardware.opengl.enable = true;
 
@@ -97,6 +100,7 @@
     haskellPackages.stack
     haskellPackages.servius # file server
     haskellPackages.xmobar # Top level install allows bin access, have to reconfig if want access within xmonad
+    htop
     hugo
     imagemagick7
     inotify-tools # file watch hooks
@@ -112,6 +116,7 @@
     ngrok
     nmap # Check for open ports
     nodejs-12_x
+    nodePackages.prettier
     okular # edit pdfs
     nomacs # Image Viewer
     postgresql_10
@@ -126,6 +131,7 @@
     scrot # screenshot
     spotify
     sshguard # protects against ssh sniffing
+    steam
     syncthing # synchronize devices
     tdesktop # telegram
     texlive.combined.scheme-full # latex
@@ -134,6 +140,7 @@
     unzip
     vim
     wget
+    wireshark
     xorg.xev
     xclip
     xorg.xkbcomp # editing keyboard configurations
