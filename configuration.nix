@@ -4,6 +4,12 @@
 
 { config, pkgs, ... }:
 
+let
+  unstable = import
+    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/14952a5abbe695c56fac71d287f5201f366ae0dd)
+    # reuse the current configuration
+    { config = config.nixpkgs.config; };
+in
 {
   imports =
     [ ./user-shell.nix
@@ -77,7 +83,7 @@
     chromium
     cargo-watch # watch cargo project src
     conda # python
-    crawlTiles # DCSS
+    unstable.crawlTiles # DCSS
     direnv
     dmenu
     docker
@@ -104,6 +110,7 @@
     hugo
     imagemagick7
     inotify-tools # file watch hooks
+    jekyll
     jdk11
     jetbrains.idea-community # export _JAVA_AWT_WM_NONREPARENTING=1 # use this to workaround for wm
     killall # process handling
@@ -118,6 +125,7 @@
     nodejs-12_x
     nodePackages.prettier
     okular # edit pdfs
+    opam
     nomacs # Image Viewer
     postgresql_10
     python
@@ -135,6 +143,7 @@
     syncthing # synchronize devices
     tdesktop # telegram
     texlive.combined.scheme-full # latex
+    texstudio
     tree
     unetbootin
     unzip
