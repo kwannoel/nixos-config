@@ -13,6 +13,6 @@
     fd
   ];
 
-  services.emacs.defaultEditor = true;
-  services.emacs.enable = true;
+  # services.emacs.defaultEditor = true;
+  # services.emacs.enable = true;
 }

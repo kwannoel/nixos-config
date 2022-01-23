@@ -19,13 +19,20 @@ in
       ./sound.nix
       ./users.nix
       ./psql.nix
-      ./sync.nix # sync across machines
+      # ./sync.nix # sync across machines
       ./fonts.nix
       ./emacs.nix
       ./boot.nix
       ./custom.nix
       ./cachix.nix
     ];
+
+  # https://nixos.wiki/wiki/Storage_optimization
+  # nix-store --optimize
+  # nix-collect-garbage -d
+  # sudo nix-collect-garbage
+  # du -h --max-depth=1 . | rg "G"
+  nix.autoOptimiseStore = true;
 
   # Allow firefox and other unfree pkgs
   nixpkgs.config.allowUnfree = true;
@@ -67,41 +74,52 @@ in
     alias rebuild='source ~/nixos-config/init.sh'
     alias gcm='git commit --amend'
     alias gs='git status'
+    alias dudh='du -d 1 -h .'
+    export PATH=~/.local/bin:$PATH
   '';
 
   environment.systemPackages = with pkgs; [
+    aseprite # pixel art
     acpi # Advanced configuration and power interface
     ag
     arandr # screen configuration
     awscli # aws cli
     bc # GNU calculator
     bitwarden # credentials vault
+    bluejeans-gui # video conf
     blueman # bluetooth
     cabal-install
     checkstyle # java code formatter
     chez # chez scheme
     chromium
+    cargo
     cargo-watch # watch cargo project src
     conda # python
+    cron
+    dmidecode
     unstable.crawlTiles # DCSS
-    direnv
+    bind # networks
     dmenu
     docker
     docker-compose
     dropbox
     dunst # notification popup
-    dwarf-fortress
+    ethtool
     evtest # for testing keyboard inputs
     firefox
+    ffmpeg
+    file
     fzf
-    gcc
     ghostscript
     gimp # Image manipulation lib
     git
     gitAndTools.gh
+    go
+    godot # game eng
     graphviz # creating diagrams
     gparted
     gnumake # make
+    gnuplot
     haskellPackages.hakyll # hakyll static site generator
     haskellPackages.stack
     haskellPackages.servius # file server
@@ -113,26 +131,36 @@ in
     jekyll
     jdk11
     jetbrains.idea-community # export _JAVA_AWT_WM_NONREPARENTING=1 # use this to workaround for wm
+    jq
     killall # process handling
     libnotify # send notifications
     libreoffice
     light # brightness handling
+    lsof
+    niv
+    rstudio
+    tmux
+    vlc
     ## libsForQt5.vlc # vlc media player
     manpages
     mitscheme
     ngrok
+    nix-index
     nmap # Check for open ports
     nodejs-12_x
     nodePackages.prettier
     okular # edit pdfs
     opam
     nomacs # Image Viewer
+    pandoc
+    pciutils
     postgresql_10
     python
     python3
     qpdf
+    pdftk
     qpdfview
-    racket # lisp family
+    unstable.racket # lisp family
     rls # provides rust lang server for IDEs
     rustfmt # rust linting for emacs
     rustup # rust tool manager
@@ -141,10 +169,13 @@ in
     sshguard # protects against ssh sniffing
     steam
     syncthing # synchronize devices
+    tcpdump
     tdesktop # telegram
+    teams # msft teams :(
     texlive.combined.scheme-full # latex
     texstudio
     tree
+    tk
     unetbootin
     unzip
     vim
@@ -180,13 +211,16 @@ in
 
   # Open ports in the firewall.
   # enable the following ports for syncthing
-  networking.firewall.allowedTCPPorts = [ 22000 ];
-  networking.firewall.allowedUDPPorts = [ 21027 ];
+  # networking.firewall.allowedTCPPorts = [ 22000 ];
+  # networking.firewall.allowedUDPPorts = [ 21027 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
+
+  # Use VIM as commit msg editor
+  programs.vim.defaultEditor = true;
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
@@ -194,4 +228,10 @@ in
   # should.
   system.stateVersion = "20.09"; # Did you read the comment?
 
+  # Virtual box settings
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "noel" ];
+
+  programs.adb.enable = true;
+  users.users.noel.extraGroups = [ "docker" "vboxusers" "adbusers"];
 }
