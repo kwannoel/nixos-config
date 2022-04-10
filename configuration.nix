@@ -137,6 +137,7 @@ in
     libreoffice
     light # brightness handling
     lsof
+    minecraft
     niv
     rstudio
     tmux
