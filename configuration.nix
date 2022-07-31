@@ -75,6 +75,8 @@ in
     alias gcm='git commit --amend'
     alias gs='git status'
     alias dudh='du -d 1 -h .'
+    alias vpnup='sudo openfortivpn webvpn.comp.nus.edu:443 -u e0406988 --trusted-cert d1b0a471777eaa61e2ead3f035781f9b78575c3ab267ea133647b67d34767f27'
+    alias howmuchspace='sudo du -h ~ | sort -rh | head -20'
     export PATH=~/.local/bin:$PATH
   '';
 
@@ -82,6 +84,7 @@ in
     aseprite # pixel art
     acpi # Advanced configuration and power interface
     ag
+    anki
     arandr # screen configuration
     awscli # aws cli
     bc # GNU calculator
@@ -99,6 +102,7 @@ in
     dmidecode
     unstable.crawlTiles # DCSS
     bind # networks
+    cacert
     dmenu
     docker
     docker-compose
@@ -136,6 +140,7 @@ in
     libnotify # send notifications
     libreoffice
     light # brightness handling
+    lmms # Music production
     lsof
     minecraft
     niv
@@ -152,6 +157,7 @@ in
     nodePackages.prettier
     okular # edit pdfs
     opam
+    openfortivpn # soc vpn
     nomacs # Image Viewer
     pandoc
     pciutils
@@ -227,7 +233,7 @@ in
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
-  system.stateVersion = "20.09"; # Did you read the comment?
+  system.stateVersion = "22.05"; # Did you read the comment?
 
   # Virtual box settings
   virtualisation.virtualbox.host.enable = true;
