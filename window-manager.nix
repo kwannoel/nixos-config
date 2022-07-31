@@ -43,7 +43,7 @@ in
 
   # suspend and lock on lid close
   powerManagement.enable = true;
-  powerManagement.powertop.enable = true;
+  # powerManagement.powertop.enable = true;
   # services.upower.enable = true;
   services.physlock.enable = true;
   services.physlock.lockOn.suspend = true;

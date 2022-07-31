@@ -3,13 +3,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
-let
-  unstable = import
-    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/14952a5abbe695c56fac71d287f5201f366ae0dd)
-    # reuse the current configuration
-    { config = config.nixpkgs.config; };
-in
 {
   imports =
     [ ./user-shell.nix
@@ -18,7 +11,7 @@ in
       # ./desktop-manager.nix
       ./sound.nix
       ./users.nix
-      ./psql.nix
+      # ./psql.nix
       # ./sync.nix # sync across machines
       ./fonts.nix
       ./emacs.nix
@@ -39,7 +32,6 @@ in
 
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
@@ -100,7 +92,6 @@ in
     conda # python
     cron
     dmidecode
-    unstable.crawlTiles # DCSS
     bind # networks
     cacert
     dmenu
@@ -167,7 +158,6 @@ in
     qpdf
     pdftk
     qpdfview
-    unstable.racket # lisp family
     rls # provides rust lang server for IDEs
     rustfmt # rust linting for emacs
     rustup # rust tool manager
@@ -236,8 +226,8 @@ in
   system.stateVersion = "22.05"; # Did you read the comment?
 
   # Virtual box settings
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "noel" ];
+  # virtualisation.virtualbox.host.enable = true;
+  # users.extraGroups.vboxusers.members = [ "noel" ];
 
   programs.adb.enable = true;
   users.users.noel.extraGroups = [ "docker" "vboxusers" "adbusers"];
