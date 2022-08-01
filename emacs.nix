@@ -5,7 +5,7 @@
     coreutils
     cmake
     # emacs
-    ((emacsPackagesNgGen emacs).emacsWithPackages (epkgs: [
+    ((emacsPackagesFor emacs).emacsWithPackages (epkgs: [
       epkgs.vterm
     ]))
     clang

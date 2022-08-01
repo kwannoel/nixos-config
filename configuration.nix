@@ -74,24 +74,15 @@
 
   environment.systemPackages = with pkgs; [
     aseprite # pixel art
-    acpi # Advanced configuration and power interface
-    ag
+    silver-searcher # ag faster grep
     anki
     arandr # screen configuration
     awscli # aws cli
     bc # GNU calculator
     bitwarden # credentials vault
     bluejeans-gui # video conf
-    blueman # bluetooth
-    cabal-install
-    checkstyle # java code formatter
-    chez # chez scheme
     chromium
-    cargo
-    cargo-watch # watch cargo project src
-    conda # python
     cron
-    dmidecode
     bind # networks
     cacert
     dmenu
@@ -116,8 +107,6 @@
     gnumake # make
     gnuplot
     haskellPackages.hakyll # hakyll static site generator
-    haskellPackages.stack
-    haskellPackages.servius # file server
     haskellPackages.xmobar # Top level install allows bin access, have to reconfig if want access within xmonad
     htop
     hugo
@@ -139,21 +128,17 @@
     tmux
     vlc
     ## libsForQt5.vlc # vlc media player
-    manpages
+    man-pages
     mitscheme
     ngrok
     nix-index
     nmap # Check for open ports
-    nodejs-12_x
     nodePackages.prettier
     okular # edit pdfs
-    opam
     openfortivpn # soc vpn
     nomacs # Image Viewer
     pandoc
     pciutils
-    postgresql_10
-    python
     python3
     qpdf
     pdftk
@@ -165,7 +150,6 @@
     spotify
     sshguard # protects against ssh sniffing
     steam
-    syncthing # synchronize devices
     tcpdump
     tdesktop # telegram
     teams # msft teams :(

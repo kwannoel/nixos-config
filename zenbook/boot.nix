@@ -8,6 +8,6 @@
   # hardware.nvidia.modesetting.enable = true;
   # services.xserver.videoDrivers = ["nvidia"];
   # services.xserver.videoDrivers = ["modesetting"]; if the above throws any issues
-  boot.blacklistedKernelModules = ["nouveau"];
-  console.font = "latarcyrheb-sun32";
+  # boot.blacklistedKernelModules = ["nouveau"];
+  # console.font = "latarcyrheb-sun32";
 }
