@@ -14,14 +14,14 @@ in
 {
   services.xserver = {
     enable = true;
-    extraLayouts = {
-      noel_kinesis = {
-        description = "My custom layout.";
-        languages = ["us"];
-        symbolsFile = xkbLayout;
-      };
-    };
-    layout = "noel_kinesis";
+    # extraLayouts = {
+    #   noel_kinesis = {
+    #     description = "My custom layout.";
+    #     languages = ["us"];
+    #     symbolsFile = xkbLayout;
+    #   };
+    # };
+    # layout = "noel_kinesis";
     xkbOptions = "eurosign:e, caps:swapescape";
     # Enable touchpad support.
     libinput.enable = true;
@@ -37,14 +37,14 @@ in
         haskellPackages.data-default
       ];
     };
-    displayManager.defaultSession = "none+xmonad";
+    # displayManager.defaultSession = "none+xmonad";
 
     desktopManager.xterm.enable = false;
   };
 
   # suspend and lock on lid close
-  powerManagement.enable = true;
-  powerManagement.powertop.enable = true;
+  # powerManagement.enable = true;
+  # powerManagement.powertop.enable = true;
   # services.upower.enable = true;
   # services.physlock.enable = true;
   # services.physlock.lockOn.suspend = true;
