@@ -43,9 +43,9 @@ in
   };
 
   # suspend and lock on lid close
-  # powerManagement.enable = true;
+  powerManagement.enable = true;
+  powerManagement.resumeCommands = "${pkgs.kmod}/bin/rmmod atkbd; ${pkgs.kmod}/bin/modprobe atkbd reset=1";
   # powerManagement.powertop.enable = true;
-  # services.upower.enable = true;
-  # services.physlock.enable = true;
-  # services.physlock.lockOn.suspend = true;
+  services.physlock.enable = true;
+  services.physlock.lockOn.suspend = true;
 }

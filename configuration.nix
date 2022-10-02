@@ -56,6 +56,9 @@
   # Set your time zone.
   time.timeZone = "Asia/Singapore";
 
+  # enable man pages
+  documentation.enable = true;
+  documentation.man.enable = true;
   documentation.dev.enable = true;
 
   # List packages installed in system profile. To search, run:
@@ -129,6 +132,7 @@
     vlc
     ## libsForQt5.vlc # vlc media player
     man-pages
+    man-pages-posix
     mitscheme
     ngrok
     nix-index
@@ -147,6 +151,7 @@
     rustfmt # rust linting for emacs
     rustup # rust tool manager
     scrot # screenshot
+    shellcheck
     spotify
     sshguard # protects against ssh sniffing
     steam
