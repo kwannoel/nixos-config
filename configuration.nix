@@ -8,6 +8,7 @@
     [ ./user-shell.nix
       ./hardware-configuration.nix
       ./window-manager.nix
+      ./fan.nix
       # ./desktop-manager.nix
       ./sound.nix
       ./users.nix
@@ -85,6 +86,7 @@
     bitwarden # credentials vault
     bluejeans-gui # video conf
     chromium
+    cpulimit
     cron
     bind # networks
     cacert
@@ -131,6 +133,7 @@
     tmux
     vlc
     ## libsForQt5.vlc # vlc media player
+    lm_sensors
     man-pages
     man-pages-posix
     mitscheme
@@ -190,7 +193,7 @@
   services.upower.enable = true;
 
   # enable docker daemon
-  virtualisation.docker.enable = true;
+  # virtualisation.docker.enable = true;
 
   # enable changing screen brightness
   programs.light.enable = true;
@@ -215,8 +218,8 @@
   system.stateVersion = "22.05"; # Did you read the comment?
 
   # Virtual box settings
-  # virtualisation.virtualbox.host.enable = true;
-  # users.extraGroups.vboxusers.members = [ "noel" ];
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "noel" ];
 
   programs.adb.enable = true;
   users.users.noel.extraGroups = [ "docker" "vboxusers" "adbusers"];
