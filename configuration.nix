@@ -220,7 +220,11 @@
   # Virtual box settings
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "noel" ];
+  # Virtualbox extras
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.guest.x11 = true;
 
-  programs.adb.enable = true;
+  # android dev
+  # programs.adb.enable = true;
   users.users.noel.extraGroups = [ "docker" "vboxusers" "adbusers"];
 }
