@@ -122,6 +122,7 @@
     jetbrains.idea-community # export _JAVA_AWT_WM_NONREPARENTING=1 # use this to workaround for wm
     jq
     killall # process handling
+    konsole
     libnotify # send notifications
     libreoffice
     light # brightness handling
