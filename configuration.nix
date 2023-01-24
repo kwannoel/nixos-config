@@ -26,7 +26,7 @@
   # nix-collect-garbage -d
   # sudo nix-collect-garbage
   # du -h --max-depth=1 . | rg "G"
-  nix.autoOptimiseStore = true;
+  nix.settings.auto-optimise-store = true;
 
   # Allow firefox and other unfree pkgs
   nixpkgs.config.allowUnfree = true;
@@ -150,7 +150,7 @@
     qpdf
     pdftk
     qpdfview
-    rls # provides rust lang server for IDEs
+    rust-analyzer # provides rust lang server for IDEs
     rustfmt # rust linting for emacs
     rustup # rust tool manager
     scrot # screenshot

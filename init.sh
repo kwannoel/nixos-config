@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-EXPECTED_CHANNEL_VERSION="nixos-22.05"
+EXPECTED_CHANNEL_VERSION="nixos-22.11"
 
 # Pin channel version
 ACTUAL_CHANNEL_VERSION=$(sudo nix-channel --list\
