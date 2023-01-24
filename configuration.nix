@@ -68,10 +68,9 @@
   environment.interactiveShellInit = ''
     alias e='emacsclient -c -a ""'
     alias rebuild='source ~/nixos-config/init.sh'
-    alias gcm='git commit --amend'
-    alias gs='git status'
+    alias ga='git commit --amend --no-edit'
+    alias gst='git status'
     alias dudh='du -d 1 -h .'
-    alias vpnup='sudo openfortivpn webvpn.comp.nus.edu:443 -u e0406988 --trusted-cert d1b0a471777eaa61e2ead3f035781f9b78575c3ab267ea133647b67d34767f27'
     alias howmuchspace='sudo du -h ~ | sort -rh | head -20'
     export PATH=~/.local/bin:$PATH
   '';
