@@ -1,4 +1,12 @@
-# Set up
+# NixOS Configuration
+
+## Install nixos image + flash to usb
+
+make boot
+
+wget https://channels.nixos.org/nixos-unstable
+
+## Set up
 
 symlink device specific configuration:
 > ln -s <device_folder>/<config_file> <config_file>
