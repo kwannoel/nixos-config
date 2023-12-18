@@ -2,9 +2,22 @@
 
 ## Install nixos image + flash to usb
 
-make boot
+Reference: https://nixos.org/manual/nixos/stable/#sec-booting-from-usb.
 
-wget https://channels.nixos.org/nixos-unstable
+1. Find the device name of the usb drive
+```bash
+diskutil list
+```
+
+2. Unmount the usb drive
+```bash
+diskutil unmountDisk disk<X>
+```
+
+3. Flash the image to the usb drive
+```bash
+sudo dd if=<path-to-image> of=/dev/rdiskX bs=4m
+```
 
 ## Set up
 
