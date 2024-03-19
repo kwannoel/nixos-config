@@ -8,7 +8,7 @@
     [ ./user-shell.nix
       ./hardware-configuration.nix
       ./window-manager.nix
-      ./fan.nix
+      # ./fan.nix
       # ./desktop-manager.nix
       ./sound.nix
       ./users.nix
@@ -16,8 +16,8 @@
       # ./sync.nix # sync across machines
       ./fonts.nix
       ./emacs.nix
-      ./boot.nix
-      ./custom.nix
+      # ./boot.nix
+      # ./custom.nix
       ./cachix.nix
     ];
 

@@ -30,3 +30,7 @@ E.g.
 > ln -s thinkpad/hardware-configuration.nix hardware-configuration.nix
 
 Run init.sh to setup the nix system
+
+## Upgrades
+
+TODO: how to upgrade hardware config
