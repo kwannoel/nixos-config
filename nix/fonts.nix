@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 {
   fonts = {
-    enableDefaultFonts = true;
+    enableDefaultPackages = true;
     fontDir.enable = true;
     enableGhostscriptFonts = true;
-    fonts = with pkgs; [
+    packages = with pkgs; [
       iosevka
       emacs-all-the-icons-fonts
       source-code-pro

@@ -16,9 +16,9 @@
       # ./sync.nix # sync across machines
       ./fonts.nix
       ./emacs.nix
-      # ./boot.nix
+      ./boot.nix
       # ./custom.nix
-      ./cachix.nix
+      # ./cachix.nix
     ];
 
   # https://nixos.wiki/wiki/Storage_optimization
@@ -76,14 +76,15 @@
   '';
 
   environment.systemPackages = with pkgs; [
-    aseprite # pixel art
+    # aseprite # pixel art
     silver-searcher # ag faster grep
+    alacritty
     anki
     arandr # screen configuration
     awscli # aws cli
     bc # GNU calculator
     bitwarden # credentials vault
-    bluejeans-gui # video conf
+    # bluejeans-gui # video conf
     chromium
     cpulimit
     cron
@@ -92,7 +93,7 @@
     dmenu
     docker
     docker-compose
-    dropbox
+    # dropbox
     dunst # notification popup
     ethtool
     evtest # for testing keyboard inputs
@@ -105,12 +106,12 @@
     git
     gitAndTools.gh
     go
-    godot # game eng
+    # godot3 # game eng
     graphviz # creating diagrams
     gparted
     gnumake # make
     gnuplot
-    haskellPackages.hakyll # hakyll static site generator
+    # haskellPackages.hakyll # hakyll static site generator
     haskellPackages.xmobar # Top level install allows bin access, have to reconfig if want access within xmonad
     htop
     hugo
@@ -121,13 +122,13 @@
     jetbrains.idea-community # export _JAVA_AWT_WM_NONREPARENTING=1 # use this to workaround for wm
     jq
     killall # process handling
-    konsole
+    # konsole
     libnotify # send notifications
     libreoffice
     light # brightness handling
     lmms # Music production
     lsof
-    minecraft
+    # minecraft
     niv
     rstudio
     tmux
@@ -136,13 +137,11 @@
     lm_sensors
     man-pages
     man-pages-posix
-    mitscheme
-    ngrok
+    # ngrok
     nix-index
     nmap # Check for open ports
-    nodePackages.prettier
+    # nodePackages.prettier
     okular # edit pdfs
-    openfortivpn # soc vpn
     nomacs # Image Viewer
     pandoc
     pciutils
@@ -155,18 +154,18 @@
     rustup # rust tool manager
     scrot # screenshot
     shellcheck
-    spotify
+    # spotify
     sshguard # protects against ssh sniffing
     steam
     tcpdump
     tdesktop # telegram
-    teams # msft teams :(
-    texlive.combined.scheme-full # latex
-    texstudio
+    # texlive.combined.scheme-full # latex
+    # texstudio
     tree
     tk
     unetbootin
     unzip
+    rxvt-unicode
     vim
     wget
     wireshark
@@ -188,6 +187,7 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  programs.ssh.startAgent = true;
 
   # Power client dbus
   services.upower.enable = true;
@@ -215,7 +215,7 @@
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
-  system.stateVersion = "22.05"; # Did you read the comment?
+  system.stateVersion = "23.11"; # Did you read the comment?
 
   # Virtual box settings
   virtualisation.virtualbox.host.enable = true;
