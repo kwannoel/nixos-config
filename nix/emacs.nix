@@ -8,6 +8,7 @@
     ((emacsPackagesFor emacs).emacsWithPackages (epkgs: [
       epkgs.vterm
     ]))
+    fd
     clang
     ripgrep
     fd
