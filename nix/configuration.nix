@@ -66,8 +66,8 @@
   # $ nix search wget
   
   environment.interactiveShellInit = ''
+    alias rebuild='sudo nixos-rebuild switch -I nixos-config=/home/noel/nixos-config/nix/configuration.nix'
     alias e='emacsclient -c -a ""'
-    alias rebuild='source ~/nixos-config/init.sh'
     alias ga='git commit --amend --no-edit'
     alias gst='git status'
     alias dudh='du -d 1 -h .'
@@ -223,6 +223,9 @@
   # Virtualbox extras
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.guest.x11 = true;
+
+  # Enable nix flakes
+  # nix.settings.experimental-features = [ "nix-command" "flakes" ]
 
   # android dev
   # programs.adb.enable = true;
