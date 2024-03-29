@@ -66,7 +66,7 @@
   # $ nix search wget
   
   environment.interactiveShellInit = ''
-    alias rebuild='sudo nixos-rebuild switch -I nixos-config=/home/noel/nixos-config/nix/configuration.nix'
+    alias rebuild='sudo nixos-rebuild switch --flake /home/noel/nixos-config/nix/'
     alias e='emacsclient -c -a ""'
     alias ga='git commit --amend --no-edit'
     alias gst='git status'
