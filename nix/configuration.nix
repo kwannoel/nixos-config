@@ -225,7 +225,7 @@
   virtualisation.virtualbox.guest.x11 = true;
 
   # Enable nix flakes
-  # nix.settings.experimental-features = [ "nix-command" "flakes" ]
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # android dev
   # programs.adb.enable = true;
