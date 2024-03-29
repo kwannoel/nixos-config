@@ -218,11 +218,11 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
   # Virtual box settings
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "noel" ];
+  # virtualisation.virtualbox.host.enable = true;
+  # users.extraGroups.vboxusers.members = [ "noel" ];
   # Virtualbox extras
-  virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.guest.x11 = true;
+  # virtualisation.virtualbox.guest.enable = true;
+  # virtualisation.virtualbox.guest.x11 = true;
 
   # Enable nix flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

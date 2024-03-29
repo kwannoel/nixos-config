@@ -1,4 +1,3 @@
-# /etc/nixos/flake.nix
 {
   inputs = {
     # NOTE: Replace "nixos-23.11" with that which is in system.stateVersion of
