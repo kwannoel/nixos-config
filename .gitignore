@@ -1,3 +1,2 @@
 .idea
-nix/hardware-configuration.nix
 nix/boot.nix
